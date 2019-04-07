@@ -1,3 +1,12 @@
 import pokemon from '../db/models/pokemon';
 
-export const GetPokemons = (obj = {}) => pokemon.find(obj); // eslint-disable-line
+// eslint-disable-next-line
+export const GetPokemons = async (obj = {}) => {
+  try {
+    const pokemons = await pokemon.find(obj);
+
+    return pokemons;
+  } catch (err) {
+    throw new Error(err);
+  }
+};
