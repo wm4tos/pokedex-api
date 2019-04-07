@@ -1,31 +1,14 @@
-import { GraphQLString, GraphQLList, GraphQLBoolean } from 'graphql';
-import Pokemon from './type/pokemon';
-import { GetPokemonList } from '../../../controllers/pokemon.controller';
+import { GraphQLObjectType } from 'graphql';
+import pokemon from './queries/pokemon';
+import pokemons from './queries/pokemons';
 
-export default {
-  type: new GraphQLList(Pokemon),
-  args: {
-    name: {
-      type: GraphQLString,
-    },
-    _id: {
-      type: GraphQLString,
-    },
-    generation: {
-      type: GraphQLString,
-    },
-    familyID: {
-      type: GraphQLString,
-    },
-    type1: {
-      type: GraphQLString,
-    },
-    type2: {
-      type: GraphQLString,
-    },
-    legendary: {
-      type: GraphQLBoolean,
-    },
-  },
-  resolve: (root, args) => GetPokemonList(args),
+export const fields = {
+  pokemon,
+  pokemons,
 };
+
+export default new GraphQLObjectType({
+  name: 'RootPokemonQuery',
+  description: 'All pokemon queries',
+  fields,
+});
