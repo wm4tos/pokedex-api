@@ -1,13 +1,23 @@
-import { GetPokemons } from '../services/pokemon.services';
+import { GetPokemons, GetOnePokemon } from '../services/pokemon.services';
 
-// eslint-disable-next-line
 export const GetPokemonList = async (obj) => {
   try {
-    const pokemon = await GetPokemons(obj);
+    const pokemons = await GetPokemons(obj);
+
+    return pokemons;
+  } catch (err) {
+    console.error(err);
+    return [];
+  }
+};
+
+export const GetPokemon = async (obj) => {
+  try {
+    const pokemon = await GetOnePokemon(obj);
 
     return pokemon;
   } catch (err) {
-    console.log(err);
-    return [];
+    console.error(err);
+    return null;
   }
 };
