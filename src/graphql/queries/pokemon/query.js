@@ -1,6 +1,6 @@
 import { GraphQLString, GraphQLList } from 'graphql';
 import Pokemon from './type/pokemon';
-import { GetOnePokemon } from '../../../controllers/pokemon.controller';
+import { GetPokemonList } from '../../../controllers/pokemon.controller';
 
 export default {
   type: new GraphQLList(Pokemon),
@@ -27,5 +27,5 @@ export default {
       type: GraphQLString,
     },
   },
-  resolve: (root, args) => GetOnePokemon(args),
+  resolve: (root, args) => GetPokemonList(args),
 };
