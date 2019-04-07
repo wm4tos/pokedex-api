@@ -1,8 +1,8 @@
 import { GraphQLObjectType } from 'graphql';
-import pokemon from './queries/pokemon/query';
+import { fields as pokemonFields } from './queries/pokemon/query';
 
 const fields = {
-  pokemon,
+  ...pokemonFields,
 };
 
 export default new GraphQLObjectType({
