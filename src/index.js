@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.port || '8080';
 
 mongoose.connect(db, { useCreateIndex: true, useNewUrlParser: true })
-  .then(() => console.log('MongoDB connected!'))
-  .catch(err => console.log(err));
+  .then(() => process.stdout.write('MongoDB connected!\n'))
+  .catch(err => process.stdout.write(err));
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(port, () => process.stdout.write(`Listening on port ${port}\n`));
