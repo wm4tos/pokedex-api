@@ -9,11 +9,6 @@ export const schema = mongoose.Schema({
     unique: true,
     required: true,
   },
-  pokedexNumber: {
-    type: String,
-    required: true,
-  },
-  imgName: String,
   generation: {
     type: String,
     required: true,
