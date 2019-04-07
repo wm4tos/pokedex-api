@@ -1,6 +1,9 @@
 import mongoose from 'mongoose';
 
-const schema = mongoose.Schema({
+export const schema = mongoose.Schema({
+  _id: {
+    type: Number,
+  },
   name: {
     type: String,
     unique: true,
@@ -8,41 +11,40 @@ const schema = mongoose.Schema({
   },
   pokedexNumber: {
     type: String,
-    unique: true,
     required: true,
   },
   imgName: String,
   generation: {
     type: String,
-    unique: true,
     required: true,
   },
   evolutionStage: {
     type: String,
-    unique: true,
   },
   evolved: String,
   familyID: String,
-  crossGen: String,
+  crossGen: Number,
   type1: String,
   type2: String,
   weather1: String,
   weather2: String,
-  statTotal: String,
-  ATK: String,
-  DEF: String,
-  STA: String,
+  statTotal: Number,
+  ATK: Number,
+  DEF: Number,
+  STA: Number,
   legendary: String,
-  aquireable: String,
-  spawns: String,
-  regional: String,
-  raidable: String,
-  hatchable: String,
-  shiny: String,
-  nest: String,
-  new: String,
-  notGettable: String,
-  futureEvolve: String,
-}, { _id: false });
+  aquireable: Number,
+  spawns: Number,
+  regional: Number,
+  raidable: Number,
+  hatchable: Number,
+  shiny: Number,
+  nest: Number,
+  new: Number,
+  notGettable: Number,
+  futureEvolve: Number,
+  CPMax: Number,
+  CPMin: Number,
+});
 
 export default mongoose.model('pokemons', schema);
