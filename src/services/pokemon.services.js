@@ -11,8 +11,11 @@ export const GetPokemons = async (obj = {}) => {
 };
 
 export const GetOnePokemon = async (obj = {}) => {
+  const { name } = obj;
+  delete obj.name;
+  const regexName = new RegExp(name, 'i');
   try {
-    const pokemon = await pokemonModel.findOne(obj);
+    const pokemon = await pokemonModel.findOne({ name: regexName, ...obj });
 
     return pokemon;
   } catch (err) {
