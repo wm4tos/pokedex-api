@@ -15,7 +15,8 @@
     "node.js",
     "mongoose",
     "pokemon",
-    "pokedex"
+    "pokedex",
+    "graphql"
   ],
   "author": "Wesley Matos",
   "license": "ISC",
