@@ -1,5 +1,5 @@
 import { GraphQLObjectType } from 'graphql';
-import { fields as pokemonFields } from './queries/pokemon/query';
+import { fields as pokemonFields } from './schemas/pokemon/query';
 
 const fields = {
   ...pokemonFields,
