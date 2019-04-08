@@ -16,7 +16,7 @@ export const schema = mongoose.Schema({
   evolutionStage: {
     type: String,
   },
-  evolved: String,
+  evolved: Boolean,
   familyID: String,
   crossGen: Boolean,
   type1: String,
