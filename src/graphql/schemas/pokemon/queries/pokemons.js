@@ -20,6 +20,33 @@ export default {
     legendary: {
       type: GraphQLBoolean,
     },
+    evolved: {
+      type: GraphQLBoolean,
+    },
+    evolutionStage: {
+      type: GraphQLString,
+    },
+    crossGen: {
+      type: GraphQLBoolean,
+    },
+    notGettable: {
+      type: GraphQLBoolean,
+    },
+    futureEvolve: {
+      type: GraphQLBoolean,
+    },
+    weather1: {
+      type: GraphQLString,
+    },
+    weather2: {
+      type: GraphQLString,
+    },
+    regional: {
+      type: GraphQLBoolean,
+    },
+    spawns: {
+      type: GraphQLBoolean,
+    },
   },
   resolve: (root, args) => GetPokemonList(args),
 };
